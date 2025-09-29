@@ -19,16 +19,19 @@
 
 - 정렬된 왼쪽 리스트와 정렬안된 오른쪽 리스트 가정
 - 초기에는 왼쪽 리스트는 비어 있고, 정렬할 숫자들은 모두 오른쪽 리스트에 존재
+
 ![height=300](./images/selection_sort.png)
 
 ### 삽입정렬(insert sort)
 
 - 정렬되어 있는 부분에 새로운 레코드를 옳은 위치에 삽입하는 과정 반복
+
 ![height=500](./images/insert_sort.png)
 
 ### 버블정렬(bubble sort)
 
 - 인접한 2개의 레코드를 비교하여 순서대로 되어 있지 않으면 서로 교환
+
 ![height=500](./images/bubble_sort.png)
 
 ### 쉘정렬(shell sort)
@@ -38,12 +41,14 @@
 - 요소들이 멀리 떨어진 위치로 이동할 수 있게 하면 보다 적게 이동하여 제자리 찾을 수 있음
 - 전체 리스트를 일정 간격(gap)의 부분 리스트로 나눔
 - 나뉘어진 각각의 부분 리스트를 삽입정렬 함
+
 ![height=500](./images/shell_sort.png)
 
 ### 합병정렬(merge sort)
 
 1. 리스트를 두 개의 균등한 크기로 분할하고 분할된 부분리스트를 정렬
 2. 정렬된 두 개의 부분 리스트를 합하여 전체 리스트를 정렬
+
 ![height=500](./images/merge_sort.png)
 
 ### 퀵정렬(quick sort)
@@ -51,6 +56,7 @@
 - 평균적으로 가장 빠른 정렬 방법
 - 분할 정복법 사용
 - 리스트를 2개의 부분리스트로 비균등 분할하고, 각각의 부분리스트를 다시 퀵정렬함(재귀호출)
+
 ![height=500](./images/quick_sort.png)
 
 ### 기수정렬(radix sort)
@@ -58,8 +64,11 @@
 - 대부분의 정렬 방법들은 레코드들을 비교함으로써 정렬 수행
 - 기수정렬은 레코드를 비교하지 않고 정렬 수행
 - bucket을 이용
+
 ![height=500](./images/radix_sort_1.png)
+
 ![height=500](./images/radix_sort_2.png)
 
 ### 정렬 알고리즘의 비교
+
 ![height=500](./images/sort_compare_table.png)

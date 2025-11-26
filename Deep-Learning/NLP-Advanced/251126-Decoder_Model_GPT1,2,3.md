@@ -102,7 +102,7 @@
 - GPT-1과 구조 동일(Decoder-only Transformer)
 - 파라미터 + 데이터 + max length 확대
 
-## Input Format統일 → Task 구분은 "지시문(prompt)"으로
+## Input Format 통일 → Task 구분은 "지시문(prompt)"으로
 예시
 
 | Task | 입력 | 출력 |

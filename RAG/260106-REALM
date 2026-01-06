@@ -1,0 +1,75 @@
+# REALM
+
+- Retrieval-Augmented Pre-training
+- BERT Based
+
+## Question Answering
+
+- 질문을 하면 모델이 답함
+
+1. Open-book : 정답 문맥에 접근이 가능함
+
+2. Closed-book : 외부지식 사용 못함, 파라미터 학습에서만 가능
+
+3. Open-domain : 도메인이 한정되어 있지 않음 ex. 퀴즈 프로그램
+
+4. Closed-domain : 특정 도메인 내에서
+
+## Retrieve-then-prediction
+
+- retriever-reader 구조
+- RAG와 유사함
+- reader를 통해 추출됨, 생성이 아닌 이유는 BERT(encoder-only)모델을 사용하기 때문
+- main goal : x가 주어졌을 때 y의 조건부 확률
+- retreive : x가 주어졌을 때 예측에 도움이 될 z(문서) 리트리벌
+- predict : z와 x가 주어졌을 때 출력값 y 예측
+- marginalize : x, y, z가 모델에서 순서대로 등장할 확률
+
+## Neural Knowledge Retriever
+
+- knowledge corpus 존재
+- relevance score : input(x) 임베딩과 문서(z) 임베딩을 통해 구함
+
+
+## Knowledge-Augmented Encoder: Pre-train
+
+- Masked Language Modeling
+
+## Knowledge-Augmented Encoder: Finetuning
+
+- Open-QA Fine-tuning
+- h:start(s)와 h:end(s) -> BERT 사용
+
+## Joint training
+
+- What does the retriever learn?
+- recall을 log derivative trick을 이용하여 미분하기 쉽게 만듦
+- Bayes' rule 적용
+- multiplier 점수 증가 -> retrieval된 document z를 넣었을 때 정답을 출력할 확률이 높아짐
+
+## Injecting inductive biases
+
+1. Salient span masking
+
+- 문장 내 중요한 부분 masking
+- BERT-based Tagger 사용
+
+2. Null document
+
+- 정답 추론에 문서가 필요하지 않을때가 있음
+- top-k doc에 null doc 포함
+
+3. Prohibiting trivial retrievals
+
+- Pre-training 기간 동안 trivial candidate 제외
+
+4. Initialization
+
+- retriever: ICT trained BERT
+- encoder: uncased BERT-base
+
+## REALM : evaluation
+
+- NQ(Natural Question - Open)
+- WQ(Web Question)
+- CT(Curated Trec)

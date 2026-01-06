@@ -1,0 +1,24 @@
+# KNN-LM
+
+- 다음 단어 예측에 KNN 모델 사용
+- 드물게 등장하는 패턴을 다룰 때 유용
+- decoder-only Transformer
+- key idea : Representation Learning is easier than Prediction
+
+## KNN-LM Datastore
+
+- context - target
+- key 임베딩 : value 타겟토큰
+- 임베딩 데이터로 store 구축
+
+## KNN-LM Inference
+
+- key 임베딩을 가지고
+- Euclidean dist 구함
+- 이를 바탕으로 softmax에 넣음
+- Top-k Nearest
+- 같은 value일 경우 agg해서 PkNN을 구함(확률)
+
+## KNN-LM evaluation
+
+- Perplexity를 낮추는 방향
